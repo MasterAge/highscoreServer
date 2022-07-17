@@ -1,3 +1,4 @@
 .idea
-venvhighscores.db
+venv
+highscores.db
 highScoreServer/__pycache__/
