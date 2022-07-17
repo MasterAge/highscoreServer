@@ -6,9 +6,6 @@ Content-Type: application/json
   "score": "56"
 }
 
-<> 2022-05-29T202302.200.html
-
-
 ###
 
 POST http://127.0.0.1:5000/highscore
@@ -19,17 +16,19 @@ Content-Type: application/json
   "score": "156"
 }
 
-<> 2022-05-29T202308.200.html
 ###
 
 GET http://127.0.0.1:5000/highscore/max3
 Accept: application/json
 
-<> 2022-05-29T202309.200.html
-<> 2022-05-29T202305.200.html
+###
+
+GET http://127.0.0.1:5000/highscore
+Accept: application/json
 
 ###
-GET http://127.0.0.1:5000/highscore
+
+GET http://127.0.0.1:5000/highscore?start=2&count=2
 Accept: application/json
 
 ###

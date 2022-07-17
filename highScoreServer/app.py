@@ -11,7 +11,7 @@ datastore = SQLDatastore(app)
 datastore.init()
 
 # GET /highscores get all scores
-# GET /highscores?start_rank&count
+# GET /highscores?start&count
 @app.route('/highscore')
 def get_all_scores(start=0, count=10):
     return json.dumps(datastore.get_scores(start, count), cls=PlayerEncoder)
