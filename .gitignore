@@ -1,2 +1,3 @@
 .idea
-venv
+venvhighscores.db
+highScoreServer/__pycache__/

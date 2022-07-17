@@ -2,11 +2,13 @@ import json
 
 from flask import Flask, request, abort, url_for
 
-from data import Datastore, Player, PlayerEncoder
+from data import Player, PlayerEncoder, InMemoryDatastore
+from highScoreServer.SQLDatastore import SQLDatastore
 
 app = Flask(__name__)
-datastore = Datastore()
-
+# datastore = InMemoryDatastore()
+datastore = SQLDatastore(app)
+datastore.init()
 
 # GET /highscores get all scores
 # GET /highscores?start_rank&count
@@ -19,7 +21,7 @@ def get_all_scores(start=0, count=10):
 @app.route('/highscore', methods=['POST'])
 def submit_score():
     body = request.json
-    player = Player(body['username'], body['score'], request.remote_addr)
+    player = Player(body['username'], int(body['score']), request.remote_addr)
     datastore.update_score(player)
     return url_for('get_player', username=player.username)
 
