@@ -27,7 +27,7 @@ POST http://127.0.0.1:5000/highscore
 ```
 GET http://127.0.0.1:5000/highscore?start=0&count=10
 ```
- * Optionally get from `start` to `count` highscores
+ * Optionally get `count` scores from `start`
 
 ### Get a user's highscore
 ```
